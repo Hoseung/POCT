@@ -22,7 +22,7 @@ class LotCorrector():
         self.degree = degree
         self.exp_date = exp_date
         self.plot=plot
-        self.fn_lot_correct = f"{product}_{lotnum}.dat"
+        self.fn_lot_correct = f"proteometech_{product}_{lotnum}.dat"
         self.run()
         print("DONE!")
 
@@ -45,7 +45,7 @@ class LotCorrector():
         
         lot_code = lot_codes[product]
         
-        qr_string = f"Proteomtech {product} {lot_code}{lotnum} {exp_date} {h[:10]}"
+        qr_string = f"Proteometech {product} {lot_code}{lotnum} {exp_date} {h[:10]}"
         
         
         img = qrcode.make(qr_string)
@@ -120,5 +120,5 @@ class LotCorrector():
 
     @staticmethod
     def get_fn_qr(product, lotnum):
-        return f"{product} {lotnum}_qr.png"
+        return f"proteometech_{product} {lotnum}.png"
     
